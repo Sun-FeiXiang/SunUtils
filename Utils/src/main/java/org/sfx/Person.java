@@ -1,6 +1,26 @@
-package org.sfx;/**
- * @description 
+package org.sfx;
+
+/**
  * @author sunfx2
+ * @description
  * @date 2023-2-9 10:50
- **/public class Person {
+ **/
+public class Person {
+    private String name;
+    private int age;
+    public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
 }

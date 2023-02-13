@@ -1,15 +1,15 @@
-package org.sfx.fileHandle;
+package org.sfx.file;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author sunfx2
+ * @author Felix
  * @description 查找mapper位置
  * @date 2022-9-19 10:52
  **/
-public class SearchFileInPath {
+public class Search {
     /**
      * 递归查找文件
      *
@@ -37,7 +37,7 @@ public class SearchFileInPath {
                 //System.out.println(readfile.getName());
                 if (!readfile.isDirectory()) {
                     tempName = readfile.getName();
-                    if (SearchFileInPath.wildcardMatch(targetFileName, tempName)) {
+                    if (Search.wildcardMatch(targetFileName, tempName)) {
                         //匹配成功，将文件名添加到结果集
                         fileList.add(readfile.getAbsoluteFile());
                     }
@@ -93,7 +93,7 @@ public class SearchFileInPath {
         // 找扩展名为txt的文件
         String fileName = "*Mapper.xml";
         List resultList = new ArrayList();
-        SearchFileInPath.findFiles(baseDIR, fileName, resultList);
+        Search.findFiles(baseDIR, fileName, resultList);
         if (resultList.size() == 0) {
             System.out.println("No File Fount.");
         } else {
